@@ -14,7 +14,7 @@ def test_convert_currency(test_client):
     assert response.status_code == 200
     data = response.json()
     assert 'result' in data
-    assert isinstance(data['result'], float)
+    assert isinstance(data.get('result'), float)
 
 
 def test_convert_currency_invalid_currency(test_client):
